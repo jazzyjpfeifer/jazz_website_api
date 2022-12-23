@@ -3,12 +3,14 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 3001;
 
+if(process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 
 //Routes
-app.get('/', (req, res) => res.type('html').send(html));
-app.get('/api/events', cors(), (req, res) => {
-  res.send('events')
-})
+ const events = require('./routes/events');
+
 
 app.get('/api/customers', cors(), (req, res) => {
   const customers = [
@@ -19,5 +21,7 @@ app.get('/api/customers', cors(), (req, res) => {
 
   res.json(customers);
 });
+
+app.use('/', events);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
