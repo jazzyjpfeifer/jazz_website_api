@@ -15,7 +15,7 @@ app.use(cors({
 
 
 //Routes
- const events = require('./routes/events');
+ const events = require('./src/routes/events');
 
 app.use('/', events);
 app.use('/.netlify/functions/api', events);  // path must route to lambda
