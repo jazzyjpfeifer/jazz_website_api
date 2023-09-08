@@ -18,7 +18,7 @@ app.use(cors({
  const events = require('./routes/events');
 
 app.use('/', events);
-app.use('/.netlify/functions/server', events);  // path must route to lambda
+app.use('/.netlify/functions/api', events);  // path must route to lambda
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
