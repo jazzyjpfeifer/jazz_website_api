@@ -9,8 +9,8 @@
   "private": false,
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "build": "netlify-lambda build express"
+    "build": "netlify-lambda build express",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "@netlify/functions": "^2.0.2",
