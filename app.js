@@ -22,7 +22,6 @@ app.use('/.netlify/functions/server', events);  // path must route to lambda
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-module.exports.handler = serverless(app);
 
 module.exports = app;
-module.exports.handler = serverless(events);
+module.exports.handler = serverless(app);
